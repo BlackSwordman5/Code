@@ -3,22 +3,21 @@ Tableau = [ [0,0,0,0,0,0,0,0],
             [0,0,0,0,0,0,0,0],
             [0,0,0,0,0,0,0,0],
             [0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0]     ] # 0 = case vide, 1='R' , -1='B'
+            [0,0,0,0,0,0,0,0]     ] # 0 = case vide, 1 = 'X' , -1 = 'O'
 
 def placement_pion(Tableau,numéro_joueur):
-    #numéro_joueur = 1 si rouge ou -1 si bleu
-    colonne_remplie=True
-    while colonne_remplie ==True:
+    #numéro_joueur = 1 si X ou -1 si O
+    colonne_remplie = True
+    while colonne_remplie == True:
         num_colonne = int(input("Donne un numéro de colonne"))
         num_ligne = 5
-        while Tableau[num_ligne][num_colonne] !=0 and num_ligne >-1:
-            num_ligne -=1
+        while Tableau[num_ligne][num_colonne] !=0 and num_ligne > -1:
+            num_ligne -= 1
         if num_ligne != -1:
             Tableau[num_ligne][num_colonne] = numéro_joueur
             colonne_remplie = False
         else:
             print("colonne déjà remplie")
-    # à compléter
     return Tableau
 
 def affichage(Tableau):
